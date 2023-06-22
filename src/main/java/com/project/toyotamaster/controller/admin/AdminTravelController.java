@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,18 +20,17 @@ import com.project.toyotamaster.services.ReportService;
 import com.project.toyotamaster.dto.TravelCreateRequestDto;
 import com.project.toyotamaster.dto.TravelUpdateRequestDto;
 import com.project.toyotamaster.entities.Travel;
-import com.project.toyotamaster.services.TravelService;
+import com.project.toyotamaster.services.TravelServiceImpl;
 
 @RestController
 @RequestMapping("/admin/travel")
 public class AdminTravelController {
 	
-	private TravelService travelService;
+	private TravelServiceImpl travelService;
 	private ReportService reportService;
 	
 	
-	public AdminTravelController(TravelService travelService, ReportService reportService) {
-
+	public AdminTravelController(TravelServiceImpl travelService, ReportService reportService) {
 		this.travelService = travelService;
 		this.reportService = reportService;
 	}
@@ -66,10 +65,6 @@ public class AdminTravelController {
 			return travelService.getTravelSearch(userId);
 		}
 	
-	@GetMapping("/searchDate/{startDate},{endDate}")
-	public Travel searchTravelDate(@PathVariable Date startDate, Date endDate) {
-		return   (Travel) travelService.getTravelSearcByDate(startDate, endDate);
-	}
 	
 	@GetMapping("/excel")
 	public void generateExcelReport(HttpServletResponse response) throws Exception{

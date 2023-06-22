@@ -9,17 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.toyotamaster.dto.UserUpdateProfileRequestDto;
 import com.project.toyotamaster.entities.User;
 import com.project.toyotamaster.services.UserService;
+import com.project.toyotamaster.services.UserServiceImpl;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 	
-	private UserService userService;
+	private UserServiceImpl userService;
 
-	public UserController(UserService userService) {
+
+	public UserController(UserServiceImpl userService) {
 		this.userService = userService;
 	}
-	
+
 	@PutMapping("/updateProfile/{userId}")
 
 	public User updateOneUser(@PathVariable Long userId, @RequestBody UserUpdateProfileRequestDto updateProfile) {

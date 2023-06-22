@@ -16,6 +16,7 @@ import com.project.toyotamaster.dto.UserCreateRequestDto;
 import com.project.toyotamaster.dto.UserUpdateRequestDto;
 import com.project.toyotamaster.entities.User;
 import com.project.toyotamaster.services.UserService;
+import com.project.toyotamaster.services.UserServiceImpl;
 
 
 @RestController
@@ -23,11 +24,13 @@ import com.project.toyotamaster.services.UserService;
 public class AdminUserController {
 	
 	
-	private UserService userService;
+	private UserServiceImpl userService;
 	
-	public AdminUserController(UserService userService) {
+
+	public AdminUserController(UserServiceImpl userService) {
 		this.userService = userService;
 	}
+
 
 	@GetMapping("/listUser")
 	public List<User> getAllUsers() {

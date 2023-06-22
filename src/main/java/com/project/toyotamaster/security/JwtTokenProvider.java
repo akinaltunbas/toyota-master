@@ -27,10 +27,10 @@ import io.jsonwebtoken.UnsupportedJwtException;
 
 @Component
 public class JwtTokenProvider {
-	@Value("${questapp.app.secret}")
+	@Value("${toyotaapp.app.secret}")
 	private String APP_SECRET;
 	
-	@Value("${questapp.expires.in}")
+	@Value("${toyotaapp.expires.in}")
 	private long EXPIRES_IN;
 	
 

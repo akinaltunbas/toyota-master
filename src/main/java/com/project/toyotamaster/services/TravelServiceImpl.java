@@ -66,14 +66,9 @@ public class TravelServiceImpl implements TravelService{
 	}
 
 	@Override
-	public List<Travel> getTravelSearcByDate(Date startDate,Date endDate) {
-		return travelRepository.findTravelByDate(startDate, endDate);
-	}
-
-
-	@Override
 	public List<Travel> getTravelSearchUsername(String username) {
 		return travelRepository.findByUsername(username);
 	}
+
 
 }

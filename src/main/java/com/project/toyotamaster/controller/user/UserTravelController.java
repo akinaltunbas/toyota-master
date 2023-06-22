@@ -17,14 +17,16 @@ import com.project.toyotamaster.dto.TravelCreateRequestDto;
 import com.project.toyotamaster.dto.TravelUpdateRequestDto;
 import com.project.toyotamaster.entities.Travel;
 import com.project.toyotamaster.services.TravelService;
+import com.project.toyotamaster.services.TravelServiceImpl;
 
 @RestController
 @RequestMapping("/user/travel")
 public class UserTravelController {
 	
-	private TravelService travelService;
+	private TravelServiceImpl travelService;
 	
-	public UserTravelController(TravelService travelService) {
+	
+	public UserTravelController(TravelServiceImpl travelService) {
 		this.travelService = travelService;
 	}
 

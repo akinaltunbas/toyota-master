@@ -22,7 +22,6 @@ public List<Travel> getAllTravels();
 	
 	public List<Travel> getTravelSearch(Long userId); 
 	
-	public List<Travel> getTravelSearcByDate( Date startDate ,Date endDate);
 	
 	public List<Travel> getTravelSearchUsername(String username);
 
