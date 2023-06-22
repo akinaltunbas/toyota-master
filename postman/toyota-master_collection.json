@@ -1,0 +1,691 @@
+{
+	"info": {
+		"_postman_id": "532899c5-96ab-4374-8bdc-5e68e483d590",
+		"name": "toyota-master",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24961794"
+	},
+	"item": [
+		{
+			"name": "UserRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"akin\",\r\n    \"password\":\"akin\",\r\n    \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"username\":\"akin\",\r\n    \"password\":\"akin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefreshToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"1\",\r\n    \"refreshToken\":\"51ddadca-a818-44e9-a6f9-803d0735054e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminListTravel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwNzEwOCwiZXhwIjoxNjg3MjA4MzA4fQ.B8WjdQ5_23iOcp2_-lJXG7edV4QAxI3bMMxejCMg_PnWwsZb02TDM8CTCvbzxZ1jQvTTLtirzlyDb6Yw0TbSUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/travel/listTravel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"listTravel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminGetTravel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwNzEwOCwiZXhwIjoxNjg3MjA4MzA4fQ.B8WjdQ5_23iOcp2_-lJXG7edV4QAxI3bMMxejCMg_PnWwsZb02TDM8CTCvbzxZ1jQvTTLtirzlyDb6Yw0TbSUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/travel/getTravel/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"getTravel",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminUpdateTravel",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwNzY5MSwiZXhwIjoxNjg3MjA4ODkxfQ.wCSmQRekw9kSWlYxu5-0YP_ud-oJpw7BCL2_Rto-_Z69jpGw1pYOG1hIM9py5kY-1EqcLAYW1TNEqAlBZBKpsA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"travelDestination\": \"Software\",\r\n    \"purposeOfGoing\": \"Turist\",\r\n    \"projectCode\": \"AAA\",\r\n    \"travelCost\": \"1000TL\",\r\n    \"username\": \"anil\",\r\n    \"travelStart\": \"2022-06-19\",\r\n    \"travelEnd\": \"2022-06-21\",\r\n    \"user\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/travel/updateTravel/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"updateTravel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminDeleteTravel",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwNzY5MSwiZXhwIjoxNjg3MjA4ODkxfQ.wCSmQRekw9kSWlYxu5-0YP_ud-oJpw7BCL2_Rto-_Z69jpGw1pYOG1hIM9py5kY-1EqcLAYW1TNEqAlBZBKpsA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/travel/deleteTravel/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"deleteTravel",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminUserList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwNzY5MSwiZXhwIjoxNjg3MjA4ODkxfQ.wCSmQRekw9kSWlYxu5-0YP_ud-oJpw7BCL2_Rto-_Z69jpGw1pYOG1hIM9py5kY-1EqcLAYW1TNEqAlBZBKpsA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/user/listUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"user",
+						"listUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminUserGet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwOTI2MSwiZXhwIjoxNjg3MjEwNDYxfQ.RTEgvwW3EX726fA_4l9gQ8NB3Y9VnHQ_-fM-5-dunvHDMGlOtqgue08MvbM2uQyD-uJ2XcONuia9ZOoQC5cLIg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/user/getUser/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"user",
+						"getUser",
+						"5"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminUserUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwOTI2MSwiZXhwIjoxNjg3MjEwNDYxfQ.RTEgvwW3EX726fA_4l9gQ8NB3Y9VnHQ_-fM-5-dunvHDMGlOtqgue08MvbM2uQyD-uJ2XcONuia9ZOoQC5cLIg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"username\": \"Anıl Yetişgin\",\r\n    \"password\": \"$2a$10$1sO8E40JukO/ReKP5scbJecc0qSg7kfyl4qCTzCLAzYaYeO3mN7CW\",\r\n    \"department\": \"IT\",\r\n    \"departmentManager\": \"Ayşe Altunbaş\",\r\n    \"role\": \"ADMIN\",\r\n    \"day\": \"MONDAY\",\r\n    \"travelSystem\": \"MONTHLY\",\r\n    \"informationService\": \"OPEN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/user/updateUser/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"user",
+						"updateUser",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminUserDelete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIwOTI2MSwiZXhwIjoxNjg3MjEwNDYxfQ.RTEgvwW3EX726fA_4l9gQ8NB3Y9VnHQ_-fM-5-dunvHDMGlOtqgue08MvbM2uQyD-uJ2XcONuia9ZOoQC5cLIg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/user/deleteUser/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"user",
+						"deleteUser",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminCreateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2Iiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzIxMDM1MCwiZXhwIjoxNjg3MjExNTUwfQ.AzMGFJZlpzfszpc_79dIPucKXpFSZBikjqohhxzryDxW2OnQ8QUaDNSQofRwuYy6mTkO6R3FWUCcGs6pdsYqlQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n    \"username\": \"anil2\",\r\n    \"password\": \"1234\",\r\n    \"department\": \"IT\",\r\n    \"departmentManager\": \"Ayşe Altunbaş\",\r\n    \"role\": \"ADMIN\",\r\n    \"day\": \"MONDAY\",\r\n    \"travelSystem\": \"MONTHLY\",\r\n    \"informationService\": \"OPEN\"\r\n   }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/user/createUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"user",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserUpdateProfile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4Iiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjg3MjExNjk1LCJleHAiOjE2ODcyMTI4OTV9.qyu_7N3xckcz8zPcwN9-G269kl5f-W3BsXgVg50Ykg0TKXzh-FwpnK_nqRrKsIqbw8KSB1PP-hfZXYy6_7X_2A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Akın Büyük\",\r\n    \"password\": \"$2a$10$1sO8E40JukO/ReKP5scbJecc0qSg7kfyl4qCTzCLAzYaYeO3mN7CW\",\r\n    \"department\": \"IT\",\r\n    \"departmentManager\": \"Ayşe Altunbaş\",\r\n    \"day\": \"MONDAY\",\r\n    \"travelSystem\": \"MONTHLY\",\r\n    \"informationService\": \"OPEN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/updateProfile/8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"updateProfile",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserUpdateTravel",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsInJvbGVzIjoiVVNFUiIsImlhdCI6MTY4NzIxMjU1NiwiZXhwIjoxNjg3MjEzNzU2fQ.vAGXyTdExrnWbBNqC7osgo35ibZWS0xjS2pO16iaq4F4CGfs_4lzOj7Biz-AToMpBWy1j6uwfyz7fltCyvOYxQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"travelDestination\": \"Ankara\",\r\n    \"purposeOfGoing\": \"TURİST\",\r\n    \"projectCode\": \"AAA\",\r\n    \"travelCost\": \"1000TL\",\r\n    \"username\": \"Büyük\",\r\n    \"travelStart\": \"2023-06-22\",\r\n    \"travelEnd\": \"2023-06-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/travel/updateTravel/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"travel",
+						"updateTravel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserCreateTravel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsInJvbGVzIjoiVVNFUiIsImlhdCI6MTY4NzIxMjU1NiwiZXhwIjoxNjg3MjEzNzU2fQ.vAGXyTdExrnWbBNqC7osgo35ibZWS0xjS2pO16iaq4F4CGfs_4lzOj7Biz-AToMpBWy1j6uwfyz7fltCyvOYxQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"travelDestination\": \"Adana\",\r\n    \"purposeOfGoing\": \"TURİST\",\r\n    \"projectCode\": \"AAA\",\r\n    \"travelCost\": \"1000TL\",\r\n    \"username\": \"Büyük\",\r\n    \"travelStart\": \"2023-06-20\",\r\n    \"travelEnd\": \"2023-06-22\",\r\n    \"user\": {\r\n        \"id\": 10,\r\n        \"username\": \"Akin Büyük\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/travel/createTravel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"travel",
+						"createTravel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserDeleteTravel",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsInJvbGVzIjoiVVNFUiIsImlhdCI6MTY4NzIxMjU1NiwiZXhwIjoxNjg3MjEzNzU2fQ.vAGXyTdExrnWbBNqC7osgo35ibZWS0xjS2pO16iaq4F4CGfs_4lzOj7Biz-AToMpBWy1j6uwfyz7fltCyvOYxQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/user/travel/deleteTravel/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"travel",
+						"deleteTravel",
+						"2"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminCreateTravel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsInJvbGVzIjoiQURNSU4iLCJpYXQiOjE2ODcyMTMyNDcsImV4cCI6MTY4NzIxNDQ0N30.cAjXWaT7bmzhTFKYtyqr8wXZodbLdsnMc0r9p62mKYdcZUGxYY7qbBhPkloqXEkfiiXr8Clnou_DqxdYbJTxbw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"travelDestination\": \"Adana\",\r\n    \"purposeOfGoing\": \"TURİST\",\r\n    \"projectCode\": \"AAA\",\r\n    \"travelCost\": \"1000TL\",\r\n    \"username\": \"Büyük\",\r\n    \"travelStart\": \"2023-06-20\",\r\n    \"travelEnd\": \"2023-06-22\",\r\n    \"user\": {\r\n        \"id\": 10,\r\n        \"username\": \"Akin Büyük\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/travel/createTravel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"createTravel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserMyTravelList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMyIsInJvbGVzIjoiQURNSU4iLCJpYXQiOjE2ODcyNDEwMjAsImV4cCI6MTY4NzI0MjIyMH0.eTxnZsMEvWLcaM3q8Nroad-PBEs6xv2INnErWyNdzJFCzHglyuwdsyTAE4DNsQ_y8dMV_gt62kHh8nhcwJ058g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/travel/searcTravel?userId=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"searcTravel"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminExcel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzQzMzA0MywiZXhwIjoxNjg3NDM0MjQzfQ.Fgbo_g8MAUHvK7KiM_s1psujaRx5S8kBtDQdZumhpHFNp8Q1ldOYHWzZQsi0WQTg1flS33juJ1XTQzrOHGjzMA",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/travel/excel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"excel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminUsernameTravel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY4NzQzODM0MiwiZXhwIjoxNjg3NDM5NTQyfQ.-xJXeTStTfMplT8KZEH9e_aux3WD9RBeaJYzzKyuPKmLm-ibXKDDRrPrZCZTlBxBwx2g5v98JCalpPOZYkzShw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/travel/searchUsername/Akin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"travel",
+						"searchUsername",
+						"Akin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
