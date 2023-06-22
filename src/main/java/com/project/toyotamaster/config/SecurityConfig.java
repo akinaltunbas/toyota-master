@@ -79,8 +79,6 @@ public class SecurityConfig {
     		.authorizeRequests()
     		.antMatchers("/auth/**")
     		.permitAll()
-    		.antMatchers("/auth/login")
-    		.permitAll()
     		.antMatchers( "/h2-console/**")
     		.permitAll()
     		.antMatchers("/admin/**")

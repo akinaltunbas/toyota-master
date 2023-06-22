@@ -14,7 +14,6 @@ public interface TravelRepository extends JpaRepository<Travel, Long>{
 	
 	 List<Travel> findByUsername(String username);
 	 
-	 @Query(value = "SELECT t FROM travels t WHERE t.travel_start BETWEEN startDate AND endDate", nativeQuery = true)
 	 List<Travel> findTravelByDate(Date startDate, Date endDate);
 	
 	
