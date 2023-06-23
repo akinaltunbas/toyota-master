@@ -32,7 +32,7 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
+		 <dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -67,7 +67,7 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.28</version>
 		 </dependency>
-		       <dependency>
+		    <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
             <version>0.11.5</version>

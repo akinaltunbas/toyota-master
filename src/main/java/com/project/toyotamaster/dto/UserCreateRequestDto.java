@@ -1,6 +1,7 @@
 package com.project.toyotamaster.dto;
 
-import com.project.toyotamaster.entities.Days;
+
+import com.project.toyotamaster.entities.InformationDay;
 import com.project.toyotamaster.entities.InformationService;
 import com.project.toyotamaster.entities.Role;
 import com.project.toyotamaster.entities.TravelSystem;
@@ -15,7 +16,7 @@ public class UserCreateRequestDto {
 	private String departmentManager;
 	private String password;
 	private Role role;
-	private Days day;
+	private InformationDay informationDay;
 	private TravelSystem travelSystem;
 	private InformationService informationService;
 	
@@ -26,7 +27,7 @@ public class UserCreateRequestDto {
 		user.setDepartment(this.getDepartment());
 		user.setDepartmentManager(this.getDepartmentManager());
 		user.setPassword(this.getPassword());
-		user.setDay(this.getDay());
+		user.setInformationDay(this.getInformationDay());
 		user.setTravelSystem(this.getTravelSystem());
 		user.setInformationService(this.getInformationService());
 	}

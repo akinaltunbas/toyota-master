@@ -71,6 +71,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
     	httpSecurity
+    		.headers().frameOptions().disable()
+    		.and()
     		.cors()
     		.and()
     		.csrf().disable()
@@ -86,7 +88,7 @@ public class SecurityConfig {
     		.antMatchers("/user/**")
     		.hasAnyAuthority("USER")
     		.anyRequest().authenticated();
-    		
+    	
     	httpSecurity.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     	return httpSecurity.build();
     }

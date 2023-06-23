@@ -14,7 +14,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.project.toyotamaster.entities.Days;
+import com.project.toyotamaster.entities.InformationDay;
 import com.project.toyotamaster.entities.InformationService;
 import com.project.toyotamaster.entities.Role;
 import com.project.toyotamaster.entities.TravelSystem;
@@ -44,7 +44,7 @@ public class UserDetailsServiceImplTest {
 				  .travelSystem(TravelSystem.MONTHLY)
 				  .role(Role.ADMIN)
 				  .informationService(InformationService.OPEN)
-				  .day(Days.MONDAY)
+				  .informationDay(InformationDay.FRIDAY)
 				   .build();
 	}
 	

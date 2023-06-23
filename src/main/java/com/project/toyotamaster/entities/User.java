@@ -34,7 +34,7 @@ public class User {
 	private Role role;
 	
 	@Enumerated(EnumType.STRING)
-	private Days day;
+	private InformationDay informationDay;
 	
 	@Enumerated(EnumType.STRING)
 	private TravelSystem travelSystem;

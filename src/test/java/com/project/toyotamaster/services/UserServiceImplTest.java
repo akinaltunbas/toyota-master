@@ -26,7 +26,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import com.project.toyotamaster.dto.UserCreateRequestDto;
 import com.project.toyotamaster.dto.UserUpdateProfileRequestDto;
 import com.project.toyotamaster.dto.UserUpdateRequestDto;
-import com.project.toyotamaster.entities.Days;
+import com.project.toyotamaster.entities.InformationDay;
 import com.project.toyotamaster.entities.InformationService;
 import com.project.toyotamaster.entities.Role;
 import com.project.toyotamaster.entities.TravelSystem;
@@ -59,7 +59,7 @@ public class UserServiceImplTest {
 				  .travelSystem(TravelSystem.MONTHLY)
 				  .role(Role.ADMIN)
 				  .informationService(InformationService.OPEN)
-				  .day(Days.MONDAY)
+				  .informationDay(InformationDay.FRIDAY)
 				   .build();
 	}
 	
@@ -130,7 +130,7 @@ public class UserServiceImplTest {
 		updateUserRequest.setPassword("1234");
 		updateUserRequest.setDepartment("IT");
 		updateUserRequest.setDepartmentMnager("Anıl");
-		updateUserRequest.setDay(Days.MONDAY);
+		updateUserRequest.setInformationDay(InformationDay.FRIDAY);
 		updateUserRequest.setInformationService(InformationService.OPEN);
 		updateUserRequest.setTravelSystem(TravelSystem.MONTHLY);
 		
@@ -143,7 +143,7 @@ public class UserServiceImplTest {
 		assertThat(updateUser.getPassword()).isEqualTo("1234");
 		assertThat(updateUser.getDepartment()).isEqualTo("IT");
 		assertThat(updateUser.getDepartmentManager()).isEqualTo("Anıl");
-		assertThat(updateUser.getDay()).isEqualTo(Days.MONDAY);
+		assertThat(updateUser.getInformationDay()).isEqualTo(InformationDay.MONDAY);
 		assertThat(updateUser.getInformationService()).isEqualTo(InformationService.OPEN);
 		assertThat(updateUser.getTravelSystem()).isEqualTo(TravelSystem.MONTHLY);
 
@@ -155,7 +155,7 @@ public class UserServiceImplTest {
 	public void givenUserList_whenGetAllUsers_thenReturnUserList() {
 		
 		//given
-		User user = new User(1L,"Akın Altunbasş","1234","Software","Zehra Altunbas",Role.ADMIN,Days.MONDAY,TravelSystem.MONTHLY,InformationService.OPEN);
+		User user = new User(1L,"Akın Altunbasş","1234","Software","Zehra Altunbas",Role.ADMIN,InformationDay.MONDAY,TravelSystem.MONTHLY,InformationService.OPEN);
 		
 		given(userRepository.findAll()).willReturn(List.of(user,user));
 		
@@ -196,7 +196,7 @@ public class UserServiceImplTest {
 		updateProfileRequest.setPassword("1234");
 		updateProfileRequest.setDepartment("IT");
 		updateProfileRequest.setDepartmentMnager("Anıl");
-		updateProfileRequest.setDay(Days.MONDAY);
+		updateProfileRequest.setInforamtionDay(InformationDay.MONDAY);
 		updateProfileRequest.setInformationService(InformationService.OPEN);
 		updateProfileRequest.setTravelSystem(TravelSystem.MONTHLY);
 		
@@ -209,7 +209,7 @@ public class UserServiceImplTest {
 		assertThat(updateUser.getPassword()).isEqualTo("1234");
 		assertThat(updateUser.getDepartment()).isEqualTo("IT");
 		assertThat(updateUser.getDepartmentManager()).isEqualTo("Anıl");
-		assertThat(updateUser.getDay()).isEqualTo(Days.MONDAY);
+		assertThat(updateUser.getInformationDay()).isEqualTo(InformationDay.MONDAY);
 		assertThat(updateUser.getInformationService()).isEqualTo(InformationService.OPEN);
 		assertThat(updateUser.getTravelSystem()).isEqualTo(TravelSystem.MONTHLY);
 
